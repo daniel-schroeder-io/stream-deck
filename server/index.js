@@ -4,6 +4,7 @@ var session        = require('express-session');
 var passport       = require('passport');
 var twitchStrategy = require('passport-twitch-new').Strategy;
 const cors = require('cors');
+const serveStatic = require("serve-static")
 
 require('dotenv').config();
 
