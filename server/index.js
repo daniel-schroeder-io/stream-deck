@@ -19,7 +19,7 @@ const CALLBACK_URL     = 'http://localhost:3000/auth/twitch/callback';  // You c
 var app = express(); 
 app.use(session({secret: SESSION_SECRET, resave: false, saveUninitialized: false}));
 //app.use(express.static('/public'));
-app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+app.use(serveStatic(path.join(__dirname, 'dist')));
 const twitchAuthClient = new TwitchAuthClient();
 app.use(passport.initialize());
 app.use(passport.session());
